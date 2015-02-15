@@ -1,0 +1,41 @@
+Anne-Sophie SAINT-OMER
+Thibault ROSA
+LABD 
+
+
+Exercice 1 :
+
+Voir football.xsd
+
+<xs:simpleType name="nomShortClub">
+		<xs:restriction base="xs:ID">
+			<xs:enumeration value="OM"/>
+			<xs:enumeration value="OL"/>
+			<xs:enumeration value="OT"/>
+		</xs:restriction>
+</xs:simpleType>
+
+
+
+Exercice2 : Voir examen-1.xsd et examen-2.xsd
+
+
+Exercice3 : Voir a.xml a.xsd b.xsd
+
+
+Exercice 4 : 
+
+	Voir personnes.xml et personnes.xsd
+
+	Question 2 
+
+	La déclaration d’espaces de nom empêchent l’accès aux résultats souhaités.
+
+	Question 3
+
+	declare namespace dnh = "http://www.fil.univ-lille1.fr/labd";
+	//*/dnh:personne[./dnh:sexe="M"]/dnh:naissance/dnh:date
+
+
+Exercice 5 : Voir individu.xsd, insee-commun.xsd et livret.xsd
+

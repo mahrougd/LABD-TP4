@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema elementFormDefault="qualified"  targetNamespace="http://www.a.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:a="http://www.a.com" xmlns:b="http://www.b.com">
+	
+
+	<xs:import namespace="http://www.b.com" schemaLocation="b.xsd"></xs:import>
+	
+	<xs:complexType name="A">
+		<xs:sequence>
+			<xs:element ref="b:B" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name= "A" type="a:A"/>
+	
+</xs:schema>

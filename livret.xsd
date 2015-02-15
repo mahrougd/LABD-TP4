@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New XSD document created with EditiX XML Editor (http://www.editix.com) at Wed Feb 11 21:13:38 CET 2015 -->
+
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified" targetNamespace="http://www.fil.univ-lille1.fr/labd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ie="http://xml.insee.fr/schema"  xmlns:bda="http://www.fil.univ-lille1.fr/labd">
+	<xs:import namespace="http://xml.insee.fr/schema"  schemaLocation="insee-commun.xsd"/>
+	<xs:import namespace="http://xml.insee.fr/schema"  schemaLocation="individu.xsd"/>
+	<xs:complexType name="parents">
+		<xs:sequence>
+			<xs:element name="pere" type="ie:IndividuType"/>
+			<xs:element name="mere" type="ie:IndividuType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="enfants">
+		<xs:sequence>
+			<xs:element name="enfant" type="ie:IndividuType" minOccurs="0" maxOccurs="294967295"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="acteMariage">
+		<xs:sequence>
+			<xs:element name="Date" type="ie:DateSoupleType" minOccurs="1"/>
+			<xs:element name="Lieu" type="ie:LieuType" minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="livretDeFamille">
+		<xs:sequence>
+			<xs:element name="parents" type="bda:parents" minOccurs="2" maxOccurs="2"/>
+			<xs:element name="acteMariage" type="bda:acteMariage" minOccurs="2" maxOccurs="2"/>
+			<xs:element name="enfants" type="bda:enfants" minOccurs="0" maxOccurs="294967295"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="livret" type="bda:livretDeFamille"/>
+</xs:schema>
